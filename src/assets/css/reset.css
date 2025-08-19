@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+*,
+body,
+html {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+/* Here we define the Custom properties */
+:root {
+  /* Main Typography */
+
+  /* Custom Colors Reset */
+  --black-color: #000;
+  --white-color: #fff;
+}
+
+/* We adapt them to the dark mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --black-color: #ececec;
+  }
+}
+
+/* Optional */
+/* Configure whether a user has activated high contrast mode (WD) */
+/* Optional */
+/* Disable animations in case a user has set the mode to no animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+/* We avoid problems with pseudo-elements of quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* We configure the text we select */
+::-moz-selection {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+::selection {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+input::-webkit-inner-spin-button,
+.no-controls::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-family: inherit;
+  font-size: 100%;
+
+  /* optional */
+  font-smooth: always;
+
+  /* optional */
+  line-height: 1.4em;
+
+  /* optional: (add -) */
+  /* -webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto; */
+
+  /* optional */
+  -webkit-font-smoothing: antialiased;
+
+  /* optional */
+  -moz-osx-font-smoothing: grayscale;
+}
